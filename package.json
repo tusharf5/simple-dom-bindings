@@ -1,0 +1,49 @@
+{
+  "name": "simple-dom-bindings",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "email": "ts17995@gmail.com",
+    "name": "Tushar Sharma",
+    "url": "https://twitter.com/tusharf5"
+  },
+  "description": "Establishes smart two way binding between the DOM nodes and your Javascript Objects",
+  "keywords": [
+    "dom bingings",
+    "dom",
+    "bindings",
+    "two way bindings",
+    "virtual dom"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tusharf5/simple-dom-bindings"
+  },
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "babel src -d dist",
+    "lint": "eslint src tests",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha tests --compilers js:babel-register",
+    "test:dev": "npm run test -- --watch",
+    "prepublish": "npm run clean & npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
+}
