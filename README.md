@@ -1,12 +1,3 @@
-
-[![Version](https://img.shields.io/npm/v/simple-dom-bindings.svg)](https://www.npmjs.com/package/simple-dom-bindings)
-[![MIT license](https://img.shields.io/npm/l/simple-dom-bindings.svg)](https://github.com/deiucanta/simple-dom-bindings/blob/master/LICENSE)
-[![dependencies](https://david-dm.org/deiucanta/simple-dom-bindings.svg)](https://david-dm.org/deiucanta/simple-dom-bindings)
-[![devDependency Status](https://david-dm.org/deiucanta/simple-dom-bindings/dev-status.svg)](https://david-dm.org/deiucanta/simple-dom-bindings#info=devDependencies)
-[![airbnb code style](https://img.shields.io/badge/code%20style-airbnb-fd5c63.svg)](https://github.com/airbnb/javascript)
-
----
-
 # Simple Dom Bindings
 
 This enables you to establish multiple two way `smart` bindings with DOM Nodes. 
@@ -28,23 +19,29 @@ yarn add simple-dom-bindings
 
 ## Usage
 
-```javascript
-import { bindObject } from 'simple-dom-bindings'
+```js
+import { bindToDOM } from 'simple-dom-bindings'
 
-const App = bindObject([
+const App = bindToDOM([
   {
-    accesor: 'version',
+    accessor: 'version',
     query: '#version',
-    initialValue: 1.0.0,
+    initialValue: '1.0.0',
   },
   {
-    accesor: 'firstName',
+    accessor: 'firstName',
     query: '.firstName',
     initialValue: 'John',
   },
   {
-    accesor: 'lastName',
-    query: '.lastName',
+    accessor: 'firstNameClass',
+    attribute: 'class', // can bind to dom attributes
+    query: '.firstName',
+    initialValue: 'primary-text',
+  },
+  {
+    accessor: 'lastName',
+    query: 'input#lastName', // handle text inputs
     initialValue: 'Doe',
   }
 ])
@@ -53,11 +50,10 @@ const App = bindObject([
 // binding with the corresponding DOM nodes
 
 console.log(App)
-// { version: 1.0.0, firstName: 'John', lastName: 'Doe' }
+// { version: '1.0.0', firstName: 'John', firstNameClass: 'primary-text' , lastName: 'Doe' }
 
 // will update the corresponding DOM node value to `Peter`
 App.firstName = 'Peter'
-
 
 // will not update the corresponding DOM node value to `Peter`
 // as it is already the same value
