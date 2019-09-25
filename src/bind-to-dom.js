@@ -7,7 +7,7 @@
  * @param elements.attribute sattribute name for the corresponding dom node OPTIONAL
  * @param config
  */
-function bindObject(elements, config) {
+function bindToDOM(elements, config) {
   const domCache = {};
   const prototype = {};
   const linkObject = {};
