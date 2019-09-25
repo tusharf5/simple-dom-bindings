@@ -1,1 +1,1 @@
-export { bindObject } from './bind-object';
+export { bindToDOM } from './bind-to-dom';
