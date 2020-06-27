@@ -1,21 +1,8 @@
 # Simple Dom Bindings
 
-This enables you to establish multiple two way `smart` bindings with DOM Nodes. 
+This **experimental** library enables you to establish multiple two way `smart` bindings with DOM Nodes. My plan is to create a JS virtual dom library with smart bindings with objects in a script or application just like how in React your JSX automatically flush all the changes to vDOM and then from there only the newer changes are commited to the actual DOM. It would be amazing if instead of JSX we could connect vDOM directly with objects that contain your state.
 
 ## Getting Started
-
-### NPM
-
-```shell
-npm install simple-dom-bindings --save
-```
-
-### Yarn
-
-```shell
-yarn add simple-dom-bindings
-```
-
 
 ## Usage
 
